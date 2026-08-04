@@ -13,12 +13,12 @@ const {
 } = require('./config')
 
 const init = () => {
-	const client = github.getOctokit(GITHUB_TOKEN, { previews: [ 'flash', 'ant-man' ] })
+	const client = github.getOctokit(GITHUB_TOKEN)
 
 	let deploymentId
 
 	const createDeployment = async () => {
-		const deployment = await client.repos.createDeployment({
+		const deployment = await client.rest.repos.createDeployment({
 			owner: USER,
 			repo: REPOSITORY,
 			ref: REF,
@@ -36,7 +36,7 @@ const init = () => {
 	const updateDeployment = async (status, url) => {
 		if (!deploymentId) return
 
-		const deploymentStatus = await client.repos.createDeploymentStatus({
+		const deploymentStatus = await client.rest.repos.createDeploymentStatus({
 			owner: USER,
 			repo: REPOSITORY,
 			deployment_id: deploymentId,
@@ -50,7 +50,7 @@ const init = () => {
 	}
 
 	const deleteExistingComment = async () => {
-		const { data } = await client.issues.listComments({
+		const { data } = await client.rest.issues.listComments({
 			owner: USER,
 			repo: REPOSITORY,
 			issue_number: PR_NUMBER
@@ -60,7 +60,7 @@ const init = () => {
 
 		const comment = data.find((comment) => comment.body.includes('This pull request has been deployed to Vercel.'))
 		if (comment) {
-			await client.issues.deleteComment({
+			await client.rest.issues.deleteComment({
 				owner: USER,
 				repo: REPOSITORY,
 				comment_id: comment.id
@@ -74,7 +74,7 @@ const init = () => {
 		// Remove indentation
 		const dedented = body.replace(/^[^\S\n]+/gm, '')
 
-		const comment = await client.issues.createComment({
+		const comment = await client.rest.issues.createComment({
 			owner: USER,
 			repo: REPOSITORY,
 			issue_number: PR_NUMBER,
@@ -85,7 +85,7 @@ const init = () => {
 	}
 
 	const addLabel = async () => {
-		const label = await client.issues.addLabels({
+		const label = await client.rest.issues.addLabels({
 			owner: USER,
 			repo: REPOSITORY,
 			issue_number: PR_NUMBER,
@@ -96,7 +96,7 @@ const init = () => {
 	}
 
 	const getCommit = async () => {
-		const { data } = await client.repos.getCommit({
+		const { data } = await client.rest.repos.getCommit({
 			owner: USER,
 			repo: REPOSITORY,
 			ref: REF
