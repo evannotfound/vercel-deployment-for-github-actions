@@ -3,6 +3,12 @@ on:
   push:
     branches:
       - main
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
 jobs:
   lint:
     name: Lint
@@ -40,7 +46,7 @@ jobs:
       - name: Release
         run: npx semantic-release
         env:
-          GITHUB_TOKEN: ${{ secrets.GH_PAT }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIT_AUTHOR_NAME: "BetaHuhn Bot"
           GIT_AUTHOR_EMAIL: "bot@mxis.ch"
           GIT_COMMITTER_NAME: "BetaHuhn Bot"
