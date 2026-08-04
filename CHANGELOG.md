@@ -1,3 +1,11 @@
+## [v1.2.2] - 2026-08-04
+
+[Release notes](https://github.com/EvanNotFound/vercel-deployment-for-github-actions/releases/tag/v1.2.2) · [Compare](https://github.com/EvanNotFound/vercel-deployment-for-github-actions/compare/v1.2.1...v1.2.2) · [Tag](https://github.com/EvanNotFound/vercel-deployment-for-github-actions/tree/v1.2.2) · Archive ([zip](https://github.com/EvanNotFound/vercel-deployment-for-github-actions/archive/v1.2.2.zip) · [tar.gz](https://github.com/EvanNotFound/vercel-deployment-for-github-actions/archive/v1.2.2.tar.gz))
+
+### Bug fixes
+
+- [`7f0d5e3`](https://github.com/EvanNotFound/vercel-deployment-for-github-actions/commit/7f0d5e3)  Update GitHub client for Node 24
+
 ## [v1.2.1] - 2026-08-04
 
 [Release notes](https://github.com/EvanNotFound/vercel-deployment-for-github-actions/releases/tag/v1.2.1) · [Compare](https://github.com/EvanNotFound/vercel-deployment-for-github-actions/compare/v1.2.0...v1.2.1) · [Tag](https://github.com/EvanNotFound/vercel-deployment-for-github-actions/tree/v1.2.1) · Archive ([zip](https://github.com/EvanNotFound/vercel-deployment-for-github-actions/archive/v1.2.1.zip) · [tar.gz](https://github.com/EvanNotFound/vercel-deployment-for-github-actions/archive/v1.2.1.tar.gz))
