@@ -1,3 +1,11 @@
+## [v1.2.1] - 2026-08-04
+
+[Release notes](https://github.com/EvanNotFound/vercel-deployment-for-github-actions/releases/tag/v1.2.1) · [Compare](https://github.com/EvanNotFound/vercel-deployment-for-github-actions/compare/v1.2.0...v1.2.1) · [Tag](https://github.com/EvanNotFound/vercel-deployment-for-github-actions/tree/v1.2.1) · Archive ([zip](https://github.com/EvanNotFound/vercel-deployment-for-github-actions/archive/v1.2.1.zip) · [tar.gz](https://github.com/EvanNotFound/vercel-deployment-for-github-actions/archive/v1.2.1.tar.gz))
+
+### Bug fixes
+
+- [`1604d75`](https://github.com/EvanNotFound/vercel-deployment-for-github-actions/commit/1604d75)  Restore Node 24 action releases
+
 ## [v1.9.12] - 2023-01-30
 
 [Release notes](https://github.com/betahuhn/deploy-to-vercel-action/releases/tag/v1.9.12) · [Compare](https://github.com/betahuhn/deploy-to-vercel-action/compare/v1.9.11...v1.9.12) · [Tag](https://github.com/betahuhn/deploy-to-vercel-action/tree/v1.9.12) · Archive ([zip](https://github.com/betahuhn/deploy-to-vercel-action/archive/v1.9.12.zip) · [tar.gz](https://github.com/betahuhn/deploy-to-vercel-action/archive/v1.9.12.tar.gz))
