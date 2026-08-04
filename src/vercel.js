@@ -1,5 +1,4 @@
 const core = require('@actions/core')
-const got = require('got')
 const { exec, removeSchema } = require('./helpers')
 
 const {
@@ -101,9 +100,13 @@ const init = () => {
 			}
 		}
 
-		const res = await got(url, options).json()
+		const response = await fetch(url, options)
 
-		return res
+		if (!response.ok) {
+			throw new Error(`Failed to get Vercel deployment: ${ response.status } ${ response.statusText }`)
+		}
+
+		return response.json()
 	}
 
 	return {
